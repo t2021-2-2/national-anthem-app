@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>National Anthem</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"> </head>
+
+<body>
+    <div class="container">
+        <h1>Jana Gana Mana</h1>
+        <h2>National Anthem of India</h2> <pre id="anthem"></pre> </div>
+    <script>
+        fetch('/static/anthem.txt')             .then(response => response.text())             .then(text => document.getElementById('anthem').innerText = text);
+    </script>
+</body>
+
+</html>
